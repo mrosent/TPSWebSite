@@ -39,11 +39,56 @@ const setupHeroVideo = () => {
     return;
   }
 
+  const overlay = heroMedia.querySelector(".hero-video-overlay");
+  const overlayText = heroMedia.querySelector(".hero-video-text");
+
+  const updateOverlayText = () => {
+    if (!overlayText) {
+      return;
+    }
+    overlayText.textContent = heroMedia.classList.contains("has-played")
+      ? "Play again"
+      : "Play video";
+  };
+
+  const markPlaying = () => {
+    heroMedia.classList.add("is-playing");
+    heroMedia.classList.add("has-played");
+    updateOverlayText();
+  };
+
+  video.addEventListener("play", markPlaying);
+  video.addEventListener("pause", () => {
+    heroMedia.classList.remove("is-playing");
+    updateOverlayText();
+  });
+
+  video.addEventListener("ended", () => {
+    heroMedia.classList.remove("is-playing");
+    updateOverlayText();
+  });
+
+  if (overlay) {
+    overlay.addEventListener("click", () => {
+      video.play().then(markPlaying).catch(() => {});
+    });
+  }
+
+  video.addEventListener("click", () => {
+    if (video.paused) {
+      video.play().then(markPlaying).catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+
   const observer = new IntersectionObserver(
     ([entry]) => {
       heroMedia.classList.toggle("in-view", entry.isIntersecting);
       if (entry.isIntersecting) {
-        video.play().catch(() => {});
+        if (!heroMedia.classList.contains("has-played")) {
+          video.play().then(markPlaying).catch(() => {});
+        }
       } else {
         video.pause();
       }

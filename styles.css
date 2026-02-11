@@ -699,6 +699,7 @@ img.component-icon {
   overflow: hidden;
   box-shadow: 0 18px 32px rgba(5, 33, 48, 0.45);
   transition: height 0.6s ease;
+  position: relative;
 }
 
 .hero-media.in-view {
@@ -720,6 +721,45 @@ img.component-icon {
   display: block;
   filter: brightness(0.95);
 }
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(11, 30, 45, 0.45);
+  color: #f1fbfc;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: 0.3px;
+  transition: opacity 0.3s ease;
+}
+
+.hero-video-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(55, 168, 161, 0.85);
+  color: #0b1e2d;
+  font-size: 18px;
+  box-shadow: 0 10px 18px rgba(5, 33, 48, 0.4);
+}
+
+.hero-video-text {
+  font-size: 0.95rem;
+}
+
+.hero-media.is-playing .hero-video-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
 
 .bundle {
   display: grid;
