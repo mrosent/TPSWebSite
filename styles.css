@@ -837,6 +837,19 @@ img.component-icon {
   margin: 0 0 80px;
 }
 
+.bundle-what-we-do {
+  grid-template-columns: minmax(220px, 1fr) minmax(320px, 1.2fr);
+}
+
+.bundle-tagline {
+  font-size: 0.9rem !important;
+  letter-spacing: 0.5px;
+  color: #8fe1e6 !important;
+  margin-top: 16px !important;
+  padding-left: 16px;
+  border-left: 3px solid rgba(212, 175, 55, 0.6);
+}
+
 .bundle-media {
   background: #ffffff;
   border-radius: 18px;
