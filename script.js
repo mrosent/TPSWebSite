@@ -185,7 +185,10 @@ const ensureFooter = () => {
   footer.className = "site-footer";
   footer.innerHTML = `
     <div class="footer-cta">
-      <h2>Unlock Professional Class AI for Your Firm</h2>
+      <div class="footer-cta-text">
+        <h2>Professional-Grade AI. Real-World Execution.</h2>
+        <p>From intake to automation to performance tracking, we implement intelligent systems that help businesses respond faster and convert more consistently.</p>
+      </div>
       <button class="primary-cta">Request a Demo</button>
     </div>
     <div class="footer-divider"></div>
