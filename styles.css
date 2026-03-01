@@ -841,6 +841,29 @@ img.component-icon {
   grid-template-columns: minmax(220px, 1fr) minmax(320px, 1.2fr);
 }
 
+.bundle-alt {
+  display: block;
+}
+
+.bundle-alt .bundle-media {
+  float: right;
+  width: 36%;
+  max-width: 300px;
+  height: 300px;
+  margin-left: 32px;
+  margin-bottom: 24px;
+}
+
+.bundle-alt .bundle-content {
+  overflow: hidden;
+}
+
+.bundle-alt::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .bundle-tagline {
   font-size: 0.9rem !important;
   letter-spacing: 0.5px;
@@ -1269,6 +1292,14 @@ img.component-icon {
     grid-template-columns: 1fr;
     margin: 0 24px 70px;
     padding: 50px 24px 60px;
+  }
+
+  .bundle-alt .bundle-media {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-bottom: 24px;
   }
 
   .bundle-media {

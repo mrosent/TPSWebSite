@@ -193,34 +193,23 @@ const ensureFooter = () => {
     </div>
     <div class="footer-divider"></div>
     <div class="footer-links">
-      <div class="footer-brand">T</div>
       <div class="footer-columns">
         <div class="footer-column">
           <div class="footer-title">Solutions</div>
-          <a href="#">Innovation</a>
-          <a href="#">In-House</a>
-          <a href="#">Transactional</a>
-          <a href="#">Litigation</a>
-          <a href="#">Collaboration</a>
+          <a href="solutions.html#foundation-system">Foundation System</a>
+          <a href="solutions.html#follow-up-booking-system">Follow-Up &amp; Booking System</a>
+          <a href="solutions.html#visibility-transparency-system">Visibility &amp; Transparency System</a>
+          <a href="solutions.html#optional-add-ons">Optional add-ons</a>
+          <a href="solutions.html#briefwise">BriefWise</a>
+          <a href="solutions.html#complaint-generator">Complaint Generator</a>
+          <a href="solutions.html#pidbot">PIDBot</a>
+          <a href="solutions.html#verdictbridge">VerdictBridge</a>
         </div>
         <div class="footer-column">
-          <div class="footer-title">About</div>
-          <a href="#">Customers</a>
-          <a href="#">Security</a>
-          <a href="#">Company</a>
-          <a href="#">Newsroom</a>
-          <a href="#">Careers</a>
-          <a href="#">Law Schools</a>
-        </div>
-        <div class="footer-column">
-          <div class="footer-title">Resources</div>
-          <a href="#">Blog</a>
-          <a href="#">Videos</a>
-          <a href="#">Guides</a>
-          <a href="#">Legal</a>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Press Kit</a>
-          <a href="#">Your Privacy Choices</a>
+          <div class="footer-title">Pages</div>
+          <a href="location.html">Location</a>
+          <a href="about-us.html">About Us</a>
+          <a href="faq.html">FAQ</a>
         </div>
       </div>
     </div>
