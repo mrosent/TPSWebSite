@@ -199,11 +199,6 @@ const ensureFooter = () => {
           <a href="solutions.html#foundation-system">Foundation System</a>
           <a href="solutions.html#follow-up-booking-system">Follow-Up &amp; Booking System</a>
           <a href="solutions.html#visibility-transparency-system">Visibility &amp; Transparency System</a>
-          <a href="solutions.html#optional-add-ons">Optional add-ons</a>
-          <a href="solutions.html#briefwise">BriefWise</a>
-          <a href="solutions.html#complaint-generator">Complaint Generator</a>
-          <a href="solutions.html#pidbot">PIDBot</a>
-          <a href="solutions.html#verdictbridge">VerdictBridge</a>
         </div>
         <div class="footer-column">
           <div class="footer-title">Pages</div>
