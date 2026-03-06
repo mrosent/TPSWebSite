@@ -215,7 +215,7 @@ const ensureFooter = () => {
         <span aria-hidden="true">|</span>
         <a href="terms-conditions.html">Terms &amp; Conditions</a>
         <span aria-hidden="true">|</span>
-        <a href="#" id="disclaimer-link">Disclaimer</a>
+        <a href="disclaimer.html">Disclaimer</a>
       </div>
       <div class="footer-social">
         <a href="#">X</a>
@@ -229,49 +229,3 @@ const ensureFooter = () => {
 };
 
 ensureFooter();
-
-const disclaimerLink = document.querySelector("#disclaimer-link");
-const disclaimerModal = document.querySelector("#disclaimer-modal");
-
-const openModal = (modal) => {
-  if (!modal) {
-    return;
-  }
-  modal.classList.add("is-open");
-  modal.setAttribute("aria-hidden", "false");
-};
-
-const closeModal = (modal) => {
-  if (!modal) {
-    return;
-  }
-  modal.classList.remove("is-open");
-  modal.setAttribute("aria-hidden", "true");
-};
-
-if (disclaimerLink) {
-  disclaimerLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    openModal(disclaimerModal);
-  });
-}
-
-const handleModalClick = (event) => {
-  const target = event.target;
-  if (!(target instanceof HTMLElement)) {
-    return;
-  }
-  if (target.closest("[data-modal-close]")) {
-    closeModal(disclaimerModal);
-  }
-};
-
-if (disclaimerModal) {
-  disclaimerModal.addEventListener("click", handleModalClick);
-}
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeModal(disclaimerModal);
-  }
-});
