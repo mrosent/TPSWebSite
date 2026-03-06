@@ -210,6 +210,13 @@ const ensureFooter = () => {
     </div>
     <div class="footer-bottom">
       <span>Copyright © 2025 Trustpoint Solutions AI. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <span aria-hidden="true">|</span>
+        <a href="terms-conditions.html">Terms &amp; Conditions</a>
+        <span aria-hidden="true">|</span>
+        <a href="#" id="disclaimer-link">Disclaimer</a>
+      </div>
       <div class="footer-social">
         <a href="#">X</a>
         <a href="#">LinkedIn</a>
@@ -223,10 +230,6 @@ const ensureFooter = () => {
 
 ensureFooter();
 
-const privacyLink = document.querySelector("#privacy-policy-link");
-const privacyModal = document.querySelector("#privacy-policy-modal");
-const termsLink = document.querySelector("#terms-conditions-link");
-const termsModal = document.querySelector("#terms-conditions-modal");
 const disclaimerLink = document.querySelector("#disclaimer-link");
 const disclaimerModal = document.querySelector("#disclaimer-modal");
 
@@ -246,20 +249,6 @@ const closeModal = (modal) => {
   modal.setAttribute("aria-hidden", "true");
 };
 
-if (privacyLink) {
-  privacyLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    openModal(privacyModal);
-  });
-}
-
-if (termsLink) {
-  termsLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    openModal(termsModal);
-  });
-}
-
 if (disclaimerLink) {
   disclaimerLink.addEventListener("click", (event) => {
     event.preventDefault();
@@ -273,19 +262,9 @@ const handleModalClick = (event) => {
     return;
   }
   if (target.closest("[data-modal-close]")) {
-    closeModal(privacyModal);
-    closeModal(termsModal);
     closeModal(disclaimerModal);
   }
 };
-
-if (privacyModal) {
-  privacyModal.addEventListener("click", handleModalClick);
-}
-
-if (termsModal) {
-  termsModal.addEventListener("click", handleModalClick);
-}
 
 if (disclaimerModal) {
   disclaimerModal.addEventListener("click", handleModalClick);
@@ -293,8 +272,6 @@ if (disclaimerModal) {
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
-    closeModal(privacyModal);
-    closeModal(termsModal);
     closeModal(disclaimerModal);
   }
 });
