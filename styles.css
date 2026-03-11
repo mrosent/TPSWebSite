@@ -1259,6 +1259,22 @@ img.component-icon {
   background: rgba(230, 246, 247, 0.25);
 }
 
+.cta-form-modal .modal-dialog {
+  max-width: 640px;
+  max-height: 90vh;
+}
+
+.cta-form-container {
+  overflow-y: auto;
+  max-height: 85vh;
+  padding: 0;
+}
+
+.cta-form-container iframe {
+  display: block;
+  min-height: 1304px;
+}
+
 .nav-toggle {
   display: none;
   background: transparent;

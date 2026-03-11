@@ -229,3 +229,72 @@ const ensureFooter = () => {
 };
 
 ensureFooter();
+
+const setupCTAModal = () => {
+  const modal = document.createElement("div");
+  modal.className = "modal cta-form-modal";
+  modal.id = "cta-form-modal";
+  modal.setAttribute("aria-hidden", "true");
+  modal.innerHTML = `
+    <div class="modal-backdrop cta-form-close"></div>
+    <div class="modal-dialog cta-form-dialog">
+      <button class="modal-close cta-form-close" type="button" aria-label="Close">×</button>
+      <div class="cta-form-container">
+        <iframe
+          src="https://link.trustpointsolutionsai.com/widget/form/6MSg5bZVm4Y3yAbrI1uK"
+          style="width:100%;height:1304px;border:none;border-radius:0px"
+          id="inline-6MSg5bZVm4Y3yAbrI1uK"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="CRM Software Registration"
+          data-height="1304"
+          data-layout-iframe-id="inline-6MSg5bZVm4Y3yAbrI1uK"
+          data-form-id="6MSg5bZVm4Y3yAbrI1uK"
+          title="CRM Software Registration">
+        </iframe>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const formScript = document.createElement("script");
+  formScript.src = "https://link.trustpointsolutionsai.com/js/form_embed.js";
+  document.body.appendChild(formScript);
+
+  const openModal = () => {
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  };
+
+  const closeModal = () => {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  };
+
+  modal.querySelectorAll(".cta-form-close").forEach((el) => {
+    el.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+
+  document.body.addEventListener("click", (e) => {
+    const target = e.target.closest(".primary-cta, .secondary-cta");
+    if (!target) return;
+    if (target.closest(".cookie-banner")) return;
+    e.preventDefault();
+    openModal();
+  });
+};
+
+setupCTAModal();
