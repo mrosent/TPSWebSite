@@ -260,6 +260,15 @@ body {
   color: #cfe9ee;
 }
 
+.subpage-section a {
+  color: #8fe1e6;
+  text-decoration: underline;
+}
+
+.subpage-section a:hover {
+  color: #b7e3ea;
+}
+
 .faq-section {
   gap: 18px;
 }
